@@ -17,9 +17,17 @@
   padding-top: var(--2);
 }
 
-.px-4 {
-  padding-left: var(--4);
-  padding-right: var(--4);
+.px-3 {
+  padding-left: var(--3);
+  padding-right: var(--3);
+}
+
+.my-2 {
+  margin-bottom: var(--2);
+  margin-top: var(--2);
+}
+.fade-50 {
+  opacity: 0.5;
 }
 
 body {
@@ -28,7 +36,7 @@ body {
 
 /*Block*/
 
-.card {
+.notification {
   background-color: #fff;
   border-radius: var(--rounded);
   box-sizing: border-box;
@@ -42,12 +50,12 @@ body {
 
 /*Element*/
 
-.card__top-section {
+.notification__header {
   align-items: center;
   display: flex;
-  gap: var(--3);
+  gap: var(--4);
 }
-.card__image {
+.notification__image {
   background: #bfbfbf center no-repeat;
   background-size: cover;
   border-radius: var(--rounded);
@@ -55,17 +63,13 @@ body {
   min-width: 4rem;
 }
 
-.card__text {
-  flex-wrap: wrap;
-}
-
-.card__line {
+.notification__line {
   background-color: #bfbfbf;
   height: 0.1rem;
   opacity: 0.5;
 }
 
-.card__button {
+.notification__button {
   cursor: pointer;
   display: flex;
   gap: var(--2);
@@ -74,13 +78,9 @@ body {
 
 /*Modifier*/
 
-.card__button--style {
+.notification__button_style {
   background-color: #bfbfbf;
   border-radius: var(--rounded);
   font-size: var(--3);
-  line-height: var(--5);
-}
-
-.fade-50 {
-  opacity: 0.5;
+  line-height: var(--4);
 }

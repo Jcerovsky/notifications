@@ -1,23 +1,35 @@
-import TopSection from "./TopSection";
-import Buttons from "./Buttons";
+interface T {
+  onDecision: (decision: "yes" | "no") => void;
+  photoUrl: string;
+  text: string;
+}
 
-function Notification() {
-  const onDecision = (decision: "yes" | "no") => {
-    console.log(`Decision: ${decision} `);
+function Notification({ onDecision, photoUrl, text }: T) {
+  const imageUrl = {
+    backgroundImage: `url(${photoUrl})`,
   };
 
-  const photoUrl =
-    "https://media.licdn.com/dms/image/D5603AQHAqDtVl2bdfw/profile-displayphoto-shrink_800_800/0/1681970286455?e=2147483647&v=beta&t=_yNs-pSFgUUZMpZrrugrrtriyuG5wnlBvMhBu2d00Ks";
   return (
-    <div className="card p-2">
-      <TopSection
-        photoUrl={photoUrl}
-        text={"Marek ma 8cm od zeme, je to pravda?"}
-      />
-      <div className="py-2">
-        <div className="card__line"></div>
+    <div className="notification p-2">
+      <div className="notification__header">
+        <div className="notification__image" style={imageUrl}></div>
+        <div>{text}</div>
       </div>
-      <Buttons onDecision={onDecision} />
+      <div className="notification__line my-2"></div>
+      <div className="notification__button">
+        <div
+          className="notification__button_style py-2 px-3"
+          onClick={() => onDecision("yes")}
+        >
+          Ano
+        </div>
+        <div
+          className="notification__button_style py-2 px-3 fade-50"
+          onClick={() => onDecision("no")}
+        >
+          Nie
+        </div>
+      </div>
     </div>
   );
 }
