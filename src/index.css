@@ -48,6 +48,8 @@ body {
   gap: var(--3);
 }
 .card__image {
+  background: #bfbfbf center no-repeat;
+  background-size: cover;
   border-radius: var(--rounded);
   min-height: 4rem;
   min-width: 4rem;
