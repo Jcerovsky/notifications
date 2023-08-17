@@ -1,0 +1,33 @@
+.p-2 {
+  padding: var(--spacing-2);
+}
+.py-2 {
+  padding-bottom: var(--spacing-2);
+  padding-top: var(--spacing-2);
+}
+
+.px-3 {
+  padding-left: var(--spacing-3);
+  padding-right: var(--spacing-3);
+}
+
+.my-2 {
+  margin-bottom: var(--spacing-2);
+  margin-top: var(--spacing-2);
+}
+
+.mr-2 {
+  margin-right: var(--spacing-2);
+}
+
+.mr-4 {
+  margin-right: var(--spacing-4);
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.font-weight-700 {
+  font-weight: 700;
+}

@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import Notification from "./Notification.tsx";
 import "./index.css";
 
-const photoUrl = "https://avatars.githubusercontent.com/u/39205266?v=4";
+const photoUrl =
+  "https://media.licdn.com/dms/image/D5603AQHAqDtVl2bdfw/profile-displayphoto-shrink_800_800/0/1681970286455?e=2147483647&v=beta&t=_yNs-pSFgUUZMpZrrugrrtriyuG5wnlBvMhBu2d00Ks";
 
 const onDecision = (decision: "yes" | "no"): void => {
   console.log(decision);
@@ -14,7 +15,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <Notification
       onDecision={onDecision}
       photoUrl={photoUrl}
-      text={"Ahoj Marek! Chcel by si cukrik?"}
+      text={"Jakub Cerovský je frajer, je to pravda?"}
+      showFooter={true}
     />
   </React.StrictMode>,
 );
