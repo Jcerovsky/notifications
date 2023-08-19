@@ -17,7 +17,7 @@ body {
   border-radius: var(--border-radius);
   color: #000;
   line-height: 1.25;
-  width: 16rem;
+  width: 21rem;
 }
 
 .notification__header {
@@ -31,8 +31,20 @@ body {
   background-color: #bfbfbf;
   background-size: cover;
   border-radius: var(--border-radius);
-  min-height: 4rem;
-  min-width: 4rem;
+  flex-shrink: 0;
+  height: 4rem;
+  width: 4rem;
+}
+
+.notification__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification__time {
+  font-size: 0.75rem;
+  right: 0;
+  top: 16px;
 }
 
 .notification__line {
@@ -50,6 +62,6 @@ body {
 .notification__button {
   background-color: #bfbfbf;
   border-radius: var(--border-radius);
-  font-size: var(--spacing-3);
+  font-size: 0.75rem;
   line-height: 1;
 }

@@ -1,21 +1,31 @@
 import "./helpers.css";
+import getTimeAgo from "./getTimeAgo";
 
 interface T {
   onDecision: (decision: "yes" | "no") => void;
   photoUrl: string;
   text: string;
+  heading: string;
   showFooter: boolean;
 }
 
-function Notification({ onDecision, photoUrl, text, showFooter }: T) {
+function Notification({ heading, onDecision, photoUrl, text, showFooter }: T) {
+  const notificationTimestamp = 1692445959;
+
   return (
     <div className="notification p-2">
-      <div className="notification__header">
+      <div className="notification__header position-relative">
         <div
           className="notification__photo mr-4"
           style={{ backgroundImage: `url(${photoUrl})` }}
         />
-        <div className="notification__text">{text}</div>
+        <div className="notification__content">
+          <div className="notification__title font-700">{heading}</div>
+          <div className="notification__text">{text}</div>
+        </div>
+        <div className="notification__time opacity-50 position-absolute font-100">
+          {getTimeAgo(notificationTimestamp)}
+        </div>
       </div>
       {showFooter && (
         <div className="notification__footer">

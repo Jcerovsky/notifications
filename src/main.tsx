@@ -15,7 +15,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <Notification
       onDecision={onDecision}
       photoUrl={photoUrl}
-      text={"Jakub Cerovský je frajer, je to pravda?"}
+      heading={"Jakub Cerovský"}
+      text={"som frajer, je to pravda?"}
       showFooter={true}
     />
   </React.StrictMode>,

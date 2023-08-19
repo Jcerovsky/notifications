@@ -1,0 +1,19 @@
+{
+  "notifications": [
+    {
+      "title": "Weekly Report Available",
+      "text": "Your screen was up 46% last week",
+      "createdAt": 1692445606
+    },
+    {
+      "title": "McDonald's",
+      "text": "Don't miss out on this amazing deal!",
+      "createdAt": 1692445206
+    },
+    {
+      "title": "Damaging Rain Warning",
+      "text": "Week's worth of rain is expected to fall this weekend!",
+      "createdAt": 1692441606
+    }
+  ]
+}
