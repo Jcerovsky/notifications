@@ -3,11 +3,11 @@ import getTimeAgo from "./getTimeAgo";
 import { NotificationProps } from "./Context";
 
 function Notification({
+  createdAt,
+  decisions,
   name,
   photoUrl,
   text,
-  createdAt,
-  onDecision,
 }: NotificationProps) {
   return (
     <div className="notification p-2 my-2">
@@ -18,7 +18,7 @@ function Notification({
         />
         <div className="notification__content">
           <div className="d-flex">
-            <div className="notification__title font-700">{name}</div>
+            <div className="notification__title font-weight-700">{name}</div>
             <div className="notification__time opacity-50 font-100">
               {getTimeAgo(createdAt)}
             </div>
@@ -26,7 +26,7 @@ function Notification({
           <div className="notification__text">{text}</div>
         </div>
       </div>
-      {onDecision && (
+      {decisions && (
         <div className="notification__footer">
           <div className="notification__line my-2" />
           <div className="notification__buttons d-flex">

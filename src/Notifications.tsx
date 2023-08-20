@@ -21,6 +21,7 @@ function Notifications() {
             photoUrl={item.photoUrl}
             text={item.text}
             id={item.id}
+            decisions={item.decisions}
           />
         </div>
       ))}
