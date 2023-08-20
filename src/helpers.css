@@ -40,14 +40,6 @@
   font-weight: 700;
 }
 
-.font-100 {
-  font-weight: 100;
-}
-
-.position-relative {
-  position: relative;
-}
-
-.position-absolute {
-  position: absolute;
+.d-flex {
+  display: flex;
 }

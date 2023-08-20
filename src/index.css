@@ -10,6 +10,7 @@
 body {
   background-color: #000;
   font-family: sans-serif;
+  box-sizing: border-box;
 }
 
 .notification {
@@ -22,7 +23,7 @@ body {
 
 .notification__header {
   align-items: center;
-  display: flex;
+  width: inherit;
 }
 
 .notification__photo {
@@ -37,14 +38,13 @@ body {
 }
 
 .notification__content {
-  display: flex;
-  flex-direction: column;
+  width: inherit;
 }
 
 .notification__time {
   font-size: 0.75rem;
-  right: 0;
-  top: 16px;
+  align-self: center;
+  margin-left: auto;
 }
 
 .notification__line {
@@ -55,7 +55,6 @@ body {
 
 .notification__buttons {
   cursor: pointer;
-  display: flex;
   justify-content: end;
 }
 
