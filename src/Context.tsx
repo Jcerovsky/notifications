@@ -1,5 +1,5 @@
 import notifications from "./data/fakeData";
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, useState } from "react";
 
 export interface NotificationProps {
   createdAt: number;
@@ -18,28 +18,32 @@ export interface DecisionProps {
 interface ContextProps {
   sendNotification: (notificationData: NotificationProps) => void;
   deleteNotification: (id: string) => void;
+  allNotifications: NotificationProps[];
 }
-
-let notificationArray = notifications;
-
-const sendNotification = async (notificationData: NotificationProps) => {
-  notificationArray.push(notificationData);
-};
-
-const deleteNotification = async (id: string) => {
-  notificationArray = notificationArray.filter((item) => item.id !== id);
-};
 
 const NotificationContext = createContext<ContextProps | null>(null);
 
 function NotificationProvider({ children }: { children: ReactNode }) {
+  const [allNotifications, setAllNotifications] =
+    useState<NotificationProps[]>(notifications);
+
+  const sendNotification = async (notificationData: NotificationProps) => {
+    setAllNotifications((prevState) => [...prevState, notificationData]);
+  };
+
+  const deleteNotification = async (id: string) => {
+    setAllNotifications((prevState) =>
+      prevState.filter((item) => item.id !== id),
+    );
+  };
+
   return (
     <NotificationContext.Provider
-      value={{ sendNotification, deleteNotification }}
+      value={{ sendNotification, deleteNotification, allNotifications }}
     >
       {children}
     </NotificationContext.Provider>
   );
 }
 
-export { NotificationContext, NotificationProvider, notificationArray };
+export { NotificationContext, NotificationProvider };

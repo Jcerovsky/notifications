@@ -1,19 +1,13 @@
-import { useEffect, useState } from "react";
-import { notificationArray, NotificationProps } from "./Context";
+import { useContext } from "react";
+import { NotificationContext } from "./Context";
 import Notification from "./Notification";
 
 function Notifications() {
-  const [allNotifications, setAllNotifications] = useState<NotificationProps[]>(
-    [],
-  );
-
-  useEffect(() => {
-    setAllNotifications(notificationArray);
-  }, []);
+  const context = useContext(NotificationContext);
 
   return (
     <div>
-      {allNotifications.map((item) => (
+      {context?.allNotifications.map((item) => (
         <div key={item.id}>
           <Notification
             createdAt={item.createdAt}
