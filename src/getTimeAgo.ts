@@ -4,7 +4,7 @@ function getTimeAgo(notificationTimestamp: number) {
   const timeDifference = +currentTime - +notificationTime;
 
   if (timeDifference < 60000) {
-    return "prave teraz";
+    return "práve teraz";
   } else if (timeDifference < 3600000) {
     const minutes = Math.round(timeDifference / 60000);
     return `pred ${minutes} min`;
@@ -13,7 +13,7 @@ function getTimeAgo(notificationTimestamp: number) {
     return `pred ${hours} hod`;
   } else {
     const days = Math.round(timeDifference / 86400000);
-    return days === 1 ? `pred ${days} dnom` : `pred ${days} dnami`;
+    return days === 1 ? `pred ${days} dňom` : `pred ${days} dňami`;
   }
 }
 
